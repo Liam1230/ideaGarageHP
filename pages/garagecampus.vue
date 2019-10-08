@@ -5,77 +5,57 @@
       <v-parallax class="toppic" dark src="/toppagebg2.jpg">
           <v-row align="center" justify="center">
             <v-expand-transition>
-              <!-- <p v-show="titleshow" class="text_title display-3 font-weight-bold">ideaGarage</p> -->
-              <v-img v-show="titleshow" class="logoImage" src="/ideaGaragelogo.png" contain></v-img>
+              <v-img v-show="titleshow" class="logoImage" src="/garageCampuslogo.png" contain></v-img>
             </v-expand-transition>
           </v-row>
           <v-row align="center" justify="center">
             <v-expand-transition>
-              <p v-show="titleshow" class="display-1 font-weight-bold title_description grey--text text--darken-1">あなたのアイデアを<br>カタチにする</p>
+              <p v-show="titleshow" class="display-1 font-weight-bold title_description grey--text text--darken-1">本物の「技術」を身につけて<br>あなたの「アイデア」を<br>「カタチ」にしよう</p>
             </v-expand-transition>
           </v-row>
       </v-parallax>
     </v-flex>
-    <CoreToolbar />
-    <!--業種-->
+    <v-flex xs12 md12>
+      <p id="carriculum_title" class="text-center display-1 font-weight-bold grey--text text--darken-1"> 3ヶ月でゼロからプログラミング基礎習得</p>
+      <v-layout justify-center row wrap>
+        <v-flex xs12 md6>
+          <p class="text-center headline font-weight-bold grey--text text--darken-1">GarageCampusでは現役のエンジニアが対面形式で指導を行い、全くの未経験者、PCが苦手な方でも安心してプログラミングの基礎を身に付けることができます。</p>
+          <p class="text-center headline font-weight-bold grey--text text--darken-1">最新のハイクラスなスキルを超低価格で習得</p>
+        </v-flex>
+      </v-layout>
+    </v-flex>
+    
+    <!-- カリキュラム -->
     <v-flex xs12 md12>
       <v-divider class="my-5"></v-divider>
+      <p id="carriculum_title" class="text-center display-3 font-weight-bold grey--text text--darken-1"> スクールの特徴</p>
       <v-layout justify-center row wrap>
-        <v-flex xs12 md12>
-          <p id="business_title" class="text-center display-3 font-weight-bold grey--text text--darken-1"> Business</p>
-        </v-flex>
-        <v-flex xs6 md3>
-          <p class="text-center headline font-weight-bold grey--text text--darken-1">ホームページ制作</p>
-          <v-img  src="/hp.jpg" contain></v-img>
+        <v-flex xs6 md4>
+          <v-img height="40vh" src="/skill.png"></v-img>
           <v-layout justify-center row wrap>
             <v-flex xs11 md11>
-              <p class="text-left body-1 font-weight-bold grey--text text--darken-1">HTML,Javascriptを使ったHP制作に加え、Nuxt,Firebaseなどを活用したハイクオリティのHPの作成が可能です</p>
+              <p class="text-left body-1 font-weight-bold grey--text text--darken-1">HTML/Javascriptなどの基本的なWeb制作からNuxt/Firebase/GoogleCloudPlatformなどを使った機械学習などの最新技術までが学べます。</p>
             </v-flex>
           </v-layout>
-          <v-layout justify-center row wrap>
-            <v-btn color="light-blue white--text font-weight-bold">もっと見る</v-btn>
-          </v-layout>
         </v-flex>
-        <v-flex xs6 md3>
-          <p class="text-center headline font-weight-bold grey--text text--darken-1">Webアプリケーション開発</p>
-          <v-img  src="/web.jpg" contain></v-img>
-          <p class="text-left body-1 font-weight-bold grey--text text--darken-1">お客様の要望にあわせて事業を加速させるAndroid,iOS,PCに対応したシステムを手の届く価格で制作しています。</p>
+        <v-flex xs6 md4>
+          <v-img height="40vh" src="/school.jpg"></v-img>
           <v-layout justify-center row wrap>
-            <v-btn color="light-blue white--text font-weight-bold">もっと見る</v-btn>
-          </v-layout>
-        </v-flex>
-        <v-flex xs6 md3>
-          <p class="text-center headline font-weight-bold grey--text text--darken-1">プログラミング教育</p>
-          <nuxt-link to="/garagecampus"><v-img src="/study.jpg" contain></v-img></nuxt-link>
-          <p class="text-left body-1 font-weight-bold grey--text text--darken-1">大阪を拠点に未経験者からフリーランス独立までの支援事業をおこなっています。</p>
-          <v-layout justify-center row wrap>
-            <v-btn color="light-blue white--text font-weight-bold" to="/garagecampus">もっと見る</v-btn>
-          </v-layout>
-        </v-flex>
-        <v-flex xs6 md3>
-          <p class="text-center headline font-weight-bold grey--text text--darken-1">モバイルアプリ開発</p>
-          <v-img  src="/appdev.jpg" contain></v-img>
-          <p class="text-left body-1 font-weight-bold grey--text text--darken-1">Flutterを使用したAndroid,iOS両対応ネイティブアプリの開発をおこなっています。</p>
-          <v-layout justify-center row wrap>
-            <v-btn color="light-blue white--text font-weight-bold">もっと見る</v-btn>
+            <v-flex xs11 md11>
+              <p class="text-left body-1 font-weight-bold grey--text text--darken-1">対面式のスクール形式なので、聞きたいことがすぐ聞ける。同じようにプログラムを学ぶ仲間と繋がって共に成長ができます。</p>
+            </v-flex>
           </v-layout>
         </v-flex>
       </v-layout>
     </v-flex>
-    <!--開発実績-->
-    <v-flex xs12 md12>
-      <v-divider class="my-5"></v-divider>
-      <p id="works_title" class="text-center display-3 font-weight-bold grey--text text--darken-1"> Works</p>
-      <PostPreview :posts="posts"></PostPreview>
-      <p class="text-center display-1 font-weight-bold grey--text text--darken-1"> もっと見る</p>
-    </v-flex>
-    <!--プロフィール-->
+    <!-- Profile -->
     <v-flex xs12 md12>
       <v-divider class="my-5"></v-divider>
       <p id="profile_title" class="text-center display-3 font-weight-bold grey--text text--darken-1"> Profile</p>
       <v-layout justify-center row wrap>
         <v-flex xs12 md4>
-          <p class="text-center headline font-weight-bold grey--text text--darken-1">代表 木下大地 DaichiKinoshita</p>
+          <p class="text-center display-1 font-weight-bold grey--text text--darken-1">現役のフリーランスエンジニアから学ぶ</p>
+          <p class="text-center headline font-weight-bold grey--text text--darken-1">講師 木下大地 DaichiKinoshita</p>
           <p class="text-left body-1 grey--text text--darken-1">
             プログラマの父の影響で小学3年生からプログラミング教育を受ける
             ゲームの専門学校を卒業した後プログラマとしてゲーム開発会社に就職、多くのアプリの開発に携わる
@@ -88,8 +68,13 @@
         </v-flex>
       </v-layout>
     </v-flex>
-    <!--アクセス-->
+    <!-- 料金システム -->
     <!-- <v-flex xs12 md12>
+      <v-divider class="my-5"></v-divider>
+      <p id="profile_title" class="text-center display-3 font-weight-bold grey--text text--darken-1"> 料金/システム</p>
+    </v-flex> -->
+    <!--アクセス-->
+    <v-flex xs12 md12>
       <v-divider class="my-5"></v-divider>
       <p id="access_title" class="text-center display-3 font-weight-bold grey--text text--darken-1"> Access</p>
       <v-layout justify-center row wrap>
@@ -103,30 +88,18 @@
           <p class="text-left body-1 font-weight-bold grey--text text--darken-1">最寄り駅:<br>大阪メトロ 鶴橋駅 谷町九丁目<br>近鉄線 大阪上本町</p>
         </v-flex>
       </v-layout>
-    </v-flex> -->
+    </v-flex>
   </v-layout>
 </v-container>
 </template>
 
 <script>
 import CoreToolbar from '~/components/Toolbar.vue'
-import PostPreview from '~/components/PostPreview.vue'
 
 export default {
-	components:{
-    CoreToolbar,
-    PostPreview
-	},
-	asyncData(env){
-		return env.app.$contentful.getEntries({
-			'content_type': 'myWorks',
-			'limit': 3
-		}).then(entries => {
-			return {
-				posts: entries.items
-			}
-		}).catch(console.error)
-  },
+    components:{
+        CoreToolbar
+    },
   mounted: function(){
     console.log(this.posts)
     setTimeout(()=>{
@@ -143,7 +116,6 @@ export default {
     }, 4400)
   },
 	data: ()=>({
-    posts:[],
     titleshow: false,
     titleDescAnim1: false,
     titleDescAnim2: false,

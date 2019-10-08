@@ -1,7 +1,7 @@
 <template>
-    <v-card :color="getColor" class="card mx-5 mb-5">
+    <v-card v-on:click="dialog=!dialog" :color="getColor" class="card mx-5 mb-5">
         <v-flex text-xs-left>
-            <nuxt-link :to="{ name: 'posts-slug', params: { slug: post.fields.slug }}" class="card-footer-item">
+            <!-- <nuxt-link :to="{ name: 'posts-slug', params: { slug: post.fields.slug }}" class="card-footer-item"> -->
                 <v-layout justify-center wrap fill-height>
                     <v-flex xs12 md12 class="my-0 py-0">
                         <span class="py-0 px-2 news-caption caption font-weight-bold grey--text text--darken-1" color="#a7a9af">{{( new Date(post.fields.publishDate)).toDateString()}}</span>
@@ -17,19 +17,58 @@
                             {{post.fields.descript}}
                         </v-flex>
                     </v-flex>
+                    <v-dialog width="80vw" v-model="dialog">
+                        <v-card>
+                            <v-card-title>
+                                <div class="headline">
+                                    <h1 class="title has-text-centered">{{ post.fields.title }}</h1>
+                                    <p class="headline__date has-text-right">{{ ( new Date(post.fields.publishDate)).toDateString() }}</p>
+                                </div>
+                            </v-card-title>
+                            <v-card-text>
+                                <section>
+                                    <header class="header">
+                                        <img
+                                            class="header_image"
+                                            v-if="post.fields.topimage"
+                                            :src="post.fields.topimage.fields.file.url"
+                                            size="100%"
+                                            :alt="post.fields.topimage.fields.descript"
+                                        >
+                                    </header>
+                                    <article class="section">
+                                        <vue-markdown class="content body-1">{{ post.fields.body }}</vue-markdown>
+                                    </article>
+                                </section>
+                            </v-card-text>
+                            <v-card-actions>
+                                <div class="flex-grow-1"></div>
+                                <v-btn color="blue darken-1" text v-on:click="dialog=false">
+                                    CLOSE
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-dialog>
                 </v-layout>
-            </nuxt-link>
+            <!-- </nuxt-link> -->
         </v-flex>
     </v-card>
 </template>
 
 <script>
 import { promised } from 'q';
+import VueMarkdown from 'vue-markdown';
 export default {
+    components: {
+      VueMarkdown
+    },
     mounted: function(){
         //console.log(this.post)
     },
     props: ['post'],
+    data: ()=>({
+        dialog: false
+    }),
     computed: {
         getColor: function () {
             let col = "#E1F5FE";
@@ -50,11 +89,15 @@ export default {
 </script>
 
 <style>
-
 .card-container{
-    display: inline-block;
-    
-    
+    display: inline-block;    
+}
+
+.headline__date {
+  font-size: .8rem;
+}
+.header_image{
+    max-height: 40vh;
 }
 .news-img{
     height:160px;

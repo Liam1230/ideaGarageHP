@@ -1,14 +1,15 @@
 {
-  "name": "portfolio",
+  "name": "ideaGarage",
   "version": "1.0.0",
-  "description": "My bee&#39;s knees Nuxt.js project",
-  "author": "Liam1230",
+  "description": "木下大地は現在ideaGarageとしてシステム開発、Webアプリケーション開発などの活動しています",
+  "author": "DaichiKinoshita",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "npm run build && firebase deploy --only hosting"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
